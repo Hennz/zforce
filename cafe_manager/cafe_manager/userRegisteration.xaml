@@ -6,9 +6,5 @@
         xmlns:local="clr-namespace:cafe_manager"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Label x:Name="lbl_Fname" Content="First Name" HorizontalAlignment="Left" Margin="22,24,0,0" VerticalAlignment="Top" Height="34" Width="116"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="22,58,0,0" VerticalAlignment="Top" Width="118"/>
-
-    </Grid>
+    <Grid/>
 </Window>
