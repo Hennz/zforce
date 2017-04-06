@@ -8,6 +8,14 @@ namespace cafe_manager
 {
     class User
     {
-        
+
+        DbConnector dbconnector = new DbConnector();
+        bool RegisterUser(User user)
+        {
+            if (dbconnector.registerUser(user))
+                return true;
+            return false;
+
+        }
     }
 }

@@ -19,9 +19,16 @@ namespace cafe_manager
     /// </summary>
     public partial class registration : Window
     {
+
+        User user = new User();
         public registration()
         {
             InitializeComponent();
+        }
+
+        private void btn_register_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
