@@ -28,7 +28,8 @@ namespace cafe_manager
 
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
-
+         //Check if all the details filled are valid
+         //call the userRegisration method to register the user
         }
     }
 }
