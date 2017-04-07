@@ -82,11 +82,46 @@ namespace cafe_manager
             }
 
         }
-
-
-
-
-
+        
+        //To Register User
+        bool registerUser(User user)
+        {
+            // Code to register user
+        }   
+        
+        // To get the user Details
+        User getUserDetails(User user)
+        {
+         // code to gee the user details from the user id
+            
+            return user;
+        }
+ 
+        // To authenticate user
+         bool authenticateUser(String username, String password)
+         {
+             /*Query if username exists, If exists then compare the password, If matches return true otherwise false*/
+         }
+        
+        //To check if the username is unique or not
+        bool checkUsername(String username)
+        {
+            //query database if the username is unique or not
+        }
+             
+         //To check if the mobile is unique or not
+        bool checkUsername(int mobile)
+        {
+            //query if the mobilenumber is unique or not
+        }
+        
+         //To check if the Email is unique or not
+        bool checkEmail(String email)
+        {
+            //Query database for the email uniqueness check
+        }
+        
+        
 
   }
 }
