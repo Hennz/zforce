@@ -211,7 +211,7 @@ namespace cafe_manager
         }
         
         //To check if the mobile is unique or not
-        public bool checkMobile(int mobile)
+        public bool checkMobile(string mobile)
         {
             if(dbconnector.checkMobile(mobile))
                 return true;
