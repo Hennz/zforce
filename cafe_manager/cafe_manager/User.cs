@@ -9,6 +9,13 @@ namespace cafe_manager
     class User
     {
 
+        string name;
+        string username;
+        string password;
+        string email;
+        int mobile;
+        
+
         DbConnector dbconnector = new DbConnector();
         bool RegisterUser(User user)
         {

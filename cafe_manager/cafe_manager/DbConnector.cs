@@ -16,10 +16,6 @@ namespace cafe_manager
         private static string Userid;
         private static string password;
 
-        public static String GetTimestamp(DateTime value)
-        {
-            return value.ToString("yyyy-MM-dd HH:mm:ss");
-        }
 
         //Constructor to create CONNECTION STRING 
         public DbConnector()
