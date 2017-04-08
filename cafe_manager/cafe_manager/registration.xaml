@@ -27,7 +27,7 @@
         <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="28" Margin="175,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Enter Your Full Name"/>
         <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="28" Margin="175,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Enter Your valid email address"/>
         <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="28" Margin="175,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Choose your username"/>
-        <DatePicker x:Name="dp_birthdate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,196,0,0" Width="109" SelectedDateFormat="Long" FontWeight="Bold" IsDropDownOpen="True"/>
+        <DatePicker x:Name="dp_birthdate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,196,0,0" Width="109" SelectedDateFormat="Short" FontWeight="Bold" IsDropDownOpen="True"/>
         <RadioButton x:Name="gender_male" Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,227,0,0" GroupName="Gender" FontWeight="Bold"/>
         <RadioButton x:Name="gender_female" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,227,0,0" GroupName="Gender" FontWeight="Bold"/>
         <TextBox x:Name="txt_mobile" HorizontalAlignment="Left" Height="28" Margin="175,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Confirm your password"/>
