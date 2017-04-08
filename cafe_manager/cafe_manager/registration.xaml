@@ -7,44 +7,52 @@
         mc:Ignorable="d"
         Title="registration" Height="500.751" Width="811.353">
     <Grid>
-        <Label x:Name="lbl_name" Content="Name" HorizontalAlignment="Left" Height="28" Margin="23,26,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_email" Content="Email" HorizontalAlignment="Left" Height="28" Margin="23,59,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_username" Content="Username" HorizontalAlignment="Left" Height="28" Margin="23,92,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_password" Content="Password" HorizontalAlignment="Left" Height="28" Margin="23,125,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_confirmpassword" Content="Confirm Password" HorizontalAlignment="Left" Height="28" Margin="23,158,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_dob" Content="Birthdate" HorizontalAlignment="Left" Height="28" Margin="23,188,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_gender" Content="Gender" HorizontalAlignment="Left" Height="28" Margin="23,221,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_cellphone" Content="Cellphone" HorizontalAlignment="Left" Height="28" Margin="23,247,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_city" Content="City" HorizontalAlignment="Left" Height="28" Margin="23,283,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_state" Content="State" HorizontalAlignment="Left" Height="28" Margin="23,316,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_country" Content="Country" HorizontalAlignment="Left" Height="28" Margin="23,349,0,0" VerticalAlignment="Top" Width="109"/>
-        <Label x:Name="lbl_pincode" Content="PIN" HorizontalAlignment="Left" Height="28" Margin="23,382,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.537,1.393"/>
-        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="28" Margin="175,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Enter Your Full Name"/>
-        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="28" Margin="175,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Enter Your valid email address"/>
-        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="28" Margin="175,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Choose your username"/>
-        <TextBox x:Name="txt_password" HorizontalAlignment="Left" Height="28" Margin="175,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Type a strong password"/>
-        <TextBox x:Name="txt_confirmpassword" HorizontalAlignment="Left" Height="28" Margin="175,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Confirm your password"/>
-        <DatePicker x:Name="date_birthdate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,191,0,0" Width="109" SelectedDateFormat="Long"/>
-        <RadioButton x:Name="gender_male" Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,227,0,0" GroupName="Gender"/>
-        <RadioButton x:Name="gender_female" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,227,0,0" GroupName="Gender"/>
-        <TextBox x:Name="txt_cellphone" HorizontalAlignment="Left" Height="28" Margin="175,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Confirm your password"/>
-        <TextBox x:Name="txt_cellphone_Copy" HorizontalAlignment="Left" Height="28" Margin="175,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Confirm your password"/>
-        <TextBox x:Name="txt_cellphone_Copy1" HorizontalAlignment="Left" Height="28" Margin="175,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Confirm your password"/>
-        <TextBox x:Name="txt_cellphone_Copy2" HorizontalAlignment="Left" Height="28" Margin="175,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Confirm your password"/>
-        <TextBox x:Name="txt_cellphone_Copy3" HorizontalAlignment="Left" Height="28" Margin="175,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" ToolTip="Confirm your password"/>
-        <Label x:Name="lbl_er_name_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,26,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_email_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,59,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_username_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,92,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_password_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,125,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_confirmpassword_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,158,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_dob_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,188,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_gender_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,221,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_cellphone_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,247,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_city_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,283,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_state_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,316,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_country_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,349,0,0" VerticalAlignment="Top" Width="311"/>
-        <Label x:Name="lbl_er_pincode_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,382,0,0" VerticalAlignment="Top" Width="311" RenderTransformOrigin="0.537,1.393"/>
-        <Button x:Name="btn_register" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="234,428,0,0" Click="btn_register_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="359*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lbl_name" Content="Name" HorizontalAlignment="Left" Height="28" Margin="23,26,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_email" Content="Email" HorizontalAlignment="Left" Height="28" Margin="23,59,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_username" Content="Username" HorizontalAlignment="Left" Height="28" Margin="23,92,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_password" Content="Password" HorizontalAlignment="Left" Height="28" Margin="23,125,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_confirmpassword" Content="Confirm Password" HorizontalAlignment="Left" Height="28" Margin="23,158,0,0" VerticalAlignment="Top" Width="124" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_dob" Content="Birthdate" HorizontalAlignment="Left" Height="28" Margin="23,188,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_gender" Content="Gender" HorizontalAlignment="Left" Height="28" Margin="23,221,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_mobile" Content="Cellphone" HorizontalAlignment="Left" Height="28" Margin="23,247,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_city" Content="City" HorizontalAlignment="Left" Height="28" Margin="23,283,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_state" Content="State" HorizontalAlignment="Left" Height="28" Margin="23,316,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_country" Content="Country" HorizontalAlignment="Left" Height="28" Margin="23,349,0,0" VerticalAlignment="Top" Width="109" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="lbl_pincode" Content="PIN" HorizontalAlignment="Left" Height="28" Margin="23,382,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.537,1.393" FontSize="13.333" FontWeight="Bold"/>
+        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="28" Margin="175,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Enter Your Full Name"/>
+        <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="28" Margin="175,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Enter Your valid email address"/>
+        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="28" Margin="175,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Choose your username"/>
+        <DatePicker x:Name="dp_birthdate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,196,0,0" Width="109" SelectedDateFormat="Long" FontWeight="Bold" IsDropDownOpen="True"/>
+        <RadioButton x:Name="gender_male" Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,227,0,0" GroupName="Gender" FontWeight="Bold"/>
+        <RadioButton x:Name="gender_female" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,227,0,0" GroupName="Gender" FontWeight="Bold"/>
+        <TextBox x:Name="txt_mobile" HorizontalAlignment="Left" Height="28" Margin="175,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Confirm your password"/>
+        <TextBox x:Name="txt_city" HorizontalAlignment="Left" Height="28" Margin="175,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Confirm your password"/>
+        <TextBox x:Name="txt_state" HorizontalAlignment="Left" Height="28" Margin="175,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Confirm your password"/>
+        <TextBox x:Name="txt_country" HorizontalAlignment="Left" Height="28" Margin="175,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Confirm your password"/>
+        <TextBox x:Name="txt_pin" HorizontalAlignment="Left" Height="28" Margin="175,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" ToolTip="Confirm your password"/>
+        <Label x:Name="lbl_er_name_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,26,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_email_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,59,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_username_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,92,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_password_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,125,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_confirmpassword_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,158,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_dob_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,188,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_gender_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,221,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_mobile_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,247,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_city_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,283,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_state_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,316,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_country_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,349,0,0" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="3"/>
+        <Label x:Name="lbl_er_pincode_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,382,0,0" VerticalAlignment="Top" Width="311" RenderTransformOrigin="0.537,1.393" Grid.ColumnSpan="3"/>
+        <Button x:Name="btn_register" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="204,422,0,0" Click="btn_register_Click" Height="28" FontWeight="Bold"/>
+        <Label x:Name="lbl_registartion_field_msg" Content="All fields are mandatory." HorizontalAlignment="Left" Height="28" Margin="348,422,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.537,1.393" FontStyle="Italic" FontWeight="Bold" FontSize="13.333"/>
+        <Button x:Name="btn_check_user_availability" Content="Check Availability" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="348,92,0,0" Click="btn_register_Click" Height="28" FontWeight="Bold"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="309,138,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Height="30" Margin="175,125,0,0" VerticalAlignment="Top" Width="164" ToolTip="Enter a strong password"/>
+        <PasswordBox x:Name="txt_confirmpassword" HorizontalAlignment="Left" Height="31" Margin="175,160,0,0" VerticalAlignment="Top" Width="164"/>
 
     </Grid>
 </Window>
