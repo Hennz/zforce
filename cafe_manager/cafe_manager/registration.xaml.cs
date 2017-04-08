@@ -156,8 +156,23 @@ namespace cafe_manager
                     return;
                 }
             }
+
+        private void btn_check_user_availability_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txt_username.Text.ToString();
+            if (username == "" )
+            {
+                lbl_registartion_field_msg.Content = ("Please Enter valid username");
+                return;
+            }
+            if (user.checkUsername(username))
+            {
+                lbl_er_username_msg.Content = ("Username Exists");
+                return;
+            }
+        }
         //Birthdate Age verification code needs to be written to verify if age is greater than 13 years
 
-        }
+    }
     }
 

@@ -49,7 +49,7 @@
         <Label x:Name="lbl_er_pincode_msg" Content="" HorizontalAlignment="Left" Height="28" Margin="467,382,0,0" VerticalAlignment="Top" Width="311" RenderTransformOrigin="0.537,1.393" Grid.ColumnSpan="3" FontWeight="Bold"/>
         <Button x:Name="btn_register" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="204,422,0,0" Click="btn_register_Click" Height="28" FontWeight="Bold"/>
         <Label x:Name="lbl_registartion_field_msg" Content="All fields are mandatory." HorizontalAlignment="Left" Height="28" Margin="348,422,0,0" VerticalAlignment="Top" Width="425" RenderTransformOrigin="0.537,1.393" FontStyle="Italic" FontSize="13.333" Grid.ColumnSpan="2" FontWeight="Bold"/>
-        <Button x:Name="btn_check_user_availability" Content="Check Availability" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="348,92,0,0" Click="btn_register_Click" Height="28" FontWeight="Bold"/>
+        <Button x:Name="btn_check_user_availability" Content="Check Availability" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="348,92,0,0" Click="btn_check_user_availability_Click" Height="28" FontWeight="Bold"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="309,138,0,0" VerticalAlignment="Top"/>
         <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Height="30" Margin="175,125,0,0" VerticalAlignment="Top" Width="164" ToolTip="Enter a strong password"/>
         <PasswordBox x:Name="txt_confirmpassword" HorizontalAlignment="Left" Height="31" Margin="175,160,0,0" VerticalAlignment="Top" Width="164"/>
