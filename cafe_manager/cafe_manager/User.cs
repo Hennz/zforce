@@ -8,16 +8,167 @@ namespace cafe_manager
 {
     class User
     {
-
+        string userId;
         string name;
         string username;
         string password;
         string email;
-        int mobile;
-        
+        string mobile;
+        decimal walletAmount;
+        string city;
+        string state;
+        string pincode;
+        string country;
+        public DateTime Dob;
+
+
 
         DbConnector dbconnector = new DbConnector();
-        bool RegisterUser(User user)
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+
+            set
+            {
+                email = value;
+            }
+        }
+
+        public string Mobile
+        {
+            get
+            {
+                return mobile;
+            }
+
+            set
+            {
+                mobile = value;
+            }
+        }
+
+        public decimal WalletAmount
+        {
+            get
+            {
+                return walletAmount;
+            }
+
+            set
+            {
+                walletAmount = value;
+            }
+        }
+
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+
+            set
+            {
+                city = value;
+            }
+        }
+
+        public string State
+        {
+            get
+            {
+                return state;
+            }
+
+            set
+            {
+                state = value;
+            }
+        }
+
+        public string Pincode
+        {
+            get
+            {
+                return pincode;
+            }
+
+            set
+            {
+                pincode = value;
+            }
+        }
+
+        public string Country
+        {
+            get
+            {
+                return country;
+            }
+
+            set
+            {
+                country = value;
+            }
+        }
+
+        public string UserId
+        {
+            get
+            {
+                return userId;
+            }
+
+            set
+            {
+                userId = value;
+            }
+        }
+
+       public bool RegisterUser(User user)
         {
             if (dbconnector.registerUser(user))
                 return true;
@@ -25,53 +176,60 @@ namespace cafe_manager
 
         }
         
-        //To get the user Details after Login
-        User getUserDetails(User user)
+        //To get the user Details by name after Login
+      public User getUserDetailsByName(User user)
         {
-            user=dbconnector.getUserDetails(user);
+            user=dbconnector.getUserDetailsByName(user);
             //check if user is null
             return user;
         }
-     
+        //To get the user Details by name after Login
+        public User getUserDetailsById(User user)
+        {
+            user = dbconnector.getUserDetailsById(user);
+            //check if user is null
+            return user;
+        }
+
         // To Authnenticate user
-        
-        bool authenticateUser(String username, String password)
+
+        public bool authenticateUser(String username, String password)
         {
             if (dbconnector.authenticateUser(username,password))
-                Return true;
+                return true;
             else
                 return false;
         }
                 
         //To check if the username is unique or not
-        bool checkUsername(String username)
+        public bool checkUsername(String username)
         {
             if(dbconnector.checkUsername(username))
-                Return true;
+                return true;
             else
                 return false;
         }
         
         //To check if the mobile is unique or not
-        bool checkMobile(int mobile)
+        public bool checkMobile(int mobile)
         {
-            if(dbconnector.checkMobile(username))
-                Return true;
+            if(dbconnector.checkMobile(mobile))
+                return true;
             else
                 return false;
         }
         
          //To check if the Email is unique or not
-        bool checkEmail(String email)
+        public bool checkEmail(String email)
         {
-            if(dbconnector.checkEmail(username))
-                Return true;
+            if(dbconnector.checkEmail(Username))
+                return true;
             else
                 return false;
         }
                     
    
     
-    
+    // End semicolons
     }   
 }
