@@ -313,7 +313,7 @@ namespace cafe_manager
         }
 
         //To check if the mobile is unique or not
-        public bool checkMobile(int mobile)
+        public bool checkMobile(string mobile)
         {
             //query if the mobile number is unique or not
             string query = "SELECT * from user where Mobile1=" + "'" + mobile + "'" + "";
