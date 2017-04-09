@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Client_Home" Height="332.773" Width="483.193">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273*"/>
+            <ColumnDefinition Width="202*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="181*"/>
             <RowDefinition Height="121*"/>
@@ -20,32 +24,32 @@
         <Label x:Name="client_lbl_welcome" Content="Welcome" HorizontalAlignment="Left" Height="31" Margin="2,39,0,0" VerticalAlignment="Top" Width="63" Foreground="#FF829356"/>
         <Label x:Name="client_lbl_name" Content="" HorizontalAlignment="Left" Height="31" Margin="65,39,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF829356"/>
         <Menu x:Name="client_menu_home" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="60" Background="#FF107896" Foreground="#FF829356" Margin="0,10,0,0">
-            <Button Content="_Home" Background="#FF107896" FontWeight="Bold" FontFamily="Segoe UI Semibold">
+            <Button Content="_Home" Background="#FF107896" FontFamily="Segoe UI Semibold">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </Button.Foreground>
             </Button>
         </Menu>
         <Menu x:Name="client_menu_view" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="60" Background="#FF107896" Foreground="#FF829356" Margin="65,10,0,0" FontFamily="Segoe UI Semibold">
-            <MenuItem Header="_View" FontFamily="Segoe UI Semibold" FontWeight="Bold">
+            <MenuItem Header="_View" FontFamily="Segoe UI Semibold">
                 <MenuItem.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </MenuItem.Foreground>
             </MenuItem>
             <MenuItem Header="_Transactions"/>
         </Menu>
-        <Menu x:Name="client_menu_logout" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="60" Background="#FF107896" Foreground="#FF829356" Margin="405,10,0,0" FontFamily="Segoe UI Black" FontWeight="Bold">
-            <Button Background="#FF107896" Content="Log Out" FontFamily="Segoe UI Semibold">
+        <Menu x:Name="client_menu_logout" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="60" Background="#FF107896" Foreground="#FF829356" Margin="131.689,10,0,0" FontFamily="Segoe UI Black" FontWeight="Bold" Grid.Column="1">
+            <Button Background="#FF107896" Content="Log Out" FontFamily="Segoe UI Semibold" FontWeight="Normal">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </Button.Foreground>
             </Button>
         </Menu>
-        <Label x:Name="client_lbl_remainingbalance" Content="Remaining Balance" HorizontalAlignment="Left" Height="31" Margin="256,142,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF829356"/>
-        <Label x:Name="client_lbl_amountbalance" Content="" HorizontalAlignment="Left" Height="31" Margin="391,142,0,0" VerticalAlignment="Top" Width="74" Foreground="#FF829356"/>
-        <Label x:Name="client_lbl_lastcafe" Content="Last Login at" HorizontalAlignment="Left" Height="31" Margin="256,10,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF829356" Grid.Row="1"/>
-        <Label x:Name="client_lbl_lastlogincafe" Content="" HorizontalAlignment="Left" Height="31" Margin="391,10,0,0" VerticalAlignment="Top" Width="74" Foreground="#FF829356" Grid.Row="1"/>
-        <Button x:Name="client_btn_recharge" Content="Recharge" HorizontalAlignment="Left" Height="31" Margin="358,59,0,0" VerticalAlignment="Top" Width="107" Background="#FF107896" Click="button_Click" Grid.Row="1" FontFamily="Segoe UI Semibold" FontWeight="Bold">
+        <Label x:Name="client_lbl_remainingbalance" Content="Remaining Balance" HorizontalAlignment="Left" Height="31" Margin="256,142,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF829356" Grid.ColumnSpan="2"/>
+        <Label x:Name="client_lbl_amountbalance" Content="" HorizontalAlignment="Left" Height="31" Margin="117.689,142,0,0" VerticalAlignment="Top" Width="74" Foreground="#FF829356" Grid.Column="1"/>
+        <Label x:Name="client_lbl_lastcafe" Content="Last Login at" HorizontalAlignment="Left" Height="31" Margin="256,10,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF829356" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="client_lbl_lastlogincafe" Content="" HorizontalAlignment="Left" Height="31" Margin="117.689,10,0,0" VerticalAlignment="Top" Width="74" Foreground="#FF829356" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="client_btn_recharge" Content="Recharge" HorizontalAlignment="Left" Height="31" Margin="84.689,59,0,0" VerticalAlignment="Top" Width="107" Background="#FF107896" Click="button_Click" Grid.Row="1" FontFamily="Segoe UI Semibold" Grid.Column="1">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
             </Button.Foreground>
