@@ -43,19 +43,7 @@ namespace cafe_manager
             lbl_er_pincode_msg.Content = ("");
             lbl_registartion_field_msg.Content = ("");
 
-            lbl_er_name_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_email_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_username_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_confirmpassword_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_password_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_dob_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_gender_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_mobile_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_city_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_state_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_country_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_er_pincode_msg.Foreground = System.Windows.Media.Brushes.Red;
-            lbl_registartion_field_msg.Foreground = System.Windows.Media.Brushes.Red;
+            
         
 
             //Check if all the details filled are valid
@@ -183,11 +171,15 @@ namespace cafe_manager
             if (user.checkUsername(username))
             {
                 lbl_er_username_msg.Content = ("Username Exists");
+            }
+            if(!user.checkUsername(username))
+            { }
+                lbl_er_username_msg.Content = ("Username Available");
                 return;
             }
         }
         //Birthdate Age verification code needs to be written to verify if age is greater than 13 years
 
     }
-    }
+    
 
