@@ -26,24 +26,6 @@ namespace cafe_manager
             InitializeComponent();
         }
         
-        // To authenticate the user
-        private void btn_signin_Click(object sender, RoutedEventArgs e)
-        {
-            //call the authentication method of User class
-            // If success then all the getUserDetails method to get the user details
-            string username = text_username1.Text.ToString();
-            string password = text_password1.Text.ToString();
-            if (user.authenticateUser(username, password))
-            {
-                user = user.getUserDetailsByName(user);
-                //open the welcome page
-            }
-
-            else
-                //print error message
-                ;
-
-        }
         
         // To open the Registration window
         private void btn_signup_Click(object sender, RoutedEventArgs e)
@@ -56,5 +38,19 @@ namespace cafe_manager
         {
             //open the Forgot password window
         }
+
+        // To authenticate the user
+        private void btn_signin_Click_1(object sender, RoutedEventArgs e)
+        {
+            string userName = text_username.Text.ToString();
+            string password = text_password.Text.ToString();
+            if (user.authenticateUser(userName, password))
+                {
+                MessageBox.Show("Login Success");
+            }
+            else
+                MessageBox.Show("Failure");
+        }
+
     }
 }

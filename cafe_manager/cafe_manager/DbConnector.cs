@@ -21,9 +21,9 @@ namespace cafe_manager
         //Constructor to create CONNECTION STRING 
         public DbConnector()
         {
-            //server = "192.168.0.2";
+            //server = "192.168.1.102";
             server = "localhost";
-            database = "cafe_manager";
+            database = "Zforce_Client";
             Userid = "root";
             password = "root";
             string connectionString;
@@ -238,7 +238,7 @@ namespace cafe_manager
         {
             /*Query if username exists, If exists then compare the password, If matches return true otherwise false*/
 
-            string query = "SELECT * from user where UserName=" + "'" + username + "'" + "And" + " Pass=" + "'" + password + "'" + "";
+            string query = "SELECT * from user where userName=" + "'" + username + "'" + "And" + " password=" + "'" + password + "'" + "";
 
 
             //Open connection
