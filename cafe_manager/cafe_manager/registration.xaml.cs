@@ -62,16 +62,19 @@ namespace cafe_manager
             //call the userRegisration method to register the user
             string username = txt_username.Text.ToString();
             string password = txt_password.Password.ToString();
-            string confirmpassword = txt_confirmpassword.ToString();
+            string confirmpassword = txt_confirmpassword.Password.ToString();
             string name = txt_name.Text.ToString();
             string email = txt_email.Text.ToString();
             string mobile = txt_mobile.Text.ToString();
-            string birthdate=(dp_dob.Text);
+            DateTime? birthdate=dp_dob.SelectedDate;
             string city = txt_city.Text.ToString();
             string state = txt_state.Text.ToString();
             string country = txt_country.Text.ToString();
             string pin = txt_pincode.Text.ToString();
             string gender;
+
+
+
             if (gender_male.IsEnabled)
             { gender = "Male";
             }
@@ -79,7 +82,7 @@ namespace cafe_manager
             { gender = "Female";
             }
 
-            if (username == "" || password == "" || name == "" || email == "" || mobile == "" || city == "" || birthdate==""|| state == "" || pin == "" || country == "" || (gender_male.IsEnabled == false && gender_female.IsEnabled == false))
+            if (username == "" || password == "" || name == "" || email == "" || mobile == "" || city == "" || birthdate== null|| state == "" || pin == "" || country == "" || (gender_male.IsEnabled == false && gender_female.IsEnabled == false))
             {
                 lbl_registartion_field_msg.Content = ("Please Enter details in all the *(Mandatory) fields");
                 return;
@@ -94,7 +97,7 @@ namespace cafe_manager
                 lbl_er_password_msg.Content = ("Password length is short (Length should be more than 5 character)");
                 return;
             }
-            if (password != confirmpassword)
+            if (! password.Equals(confirmpassword))
             {    lbl_er_confirmpassword_msg.Content = ("Password does not match");
                 return;
              }
@@ -123,7 +126,17 @@ namespace cafe_manager
                     return;
                 }
 
-                if (Regex.IsMatch(pin, @"^[1-9][0-9]{6}$") == false)
+            DateTime currentDate = DateTime.Now;
+            DateTime d = Convert.ToDateTime(birthdate);
+            TimeSpan dif = currentDate.Subtract(d);
+
+                if (dif.TotalDays<4745)
+                {
+                lbl_er_dob_msg.Content = ("User should be above 13 years");
+                return;
+                }
+
+                if (Regex.IsMatch(pin, @"^[4][0-9]{5}$") == false)
                 {
                     lbl_er_pincode_msg.Content = ("Enter correct Pin");
                     return;
@@ -155,6 +168,8 @@ namespace cafe_manager
                     lbl_er_mobile_msg.Content = ("Mobile number Exists");
                     return;
                 }
+
+                
             }
 
         private void btn_check_user_availability_Click(object sender, RoutedEventArgs e)

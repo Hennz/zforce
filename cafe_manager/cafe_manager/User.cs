@@ -20,7 +20,7 @@ namespace cafe_manager
         string pincode;
         string country;
         public DateTime Dob;
-
+        string gender;
 
 
         DbConnector dbconnector = new DbConnector();
@@ -168,7 +168,20 @@ namespace cafe_manager
             }
         }
 
-       public bool RegisterUser(User user)
+        public string Gender
+        {
+            get
+            {
+                return gender;
+            }
+
+            set
+            {
+                gender = value;
+            }
+        }
+
+        public bool RegisterUser(User user)
         {
             if (dbconnector.registerUser(user))
                 return true;
