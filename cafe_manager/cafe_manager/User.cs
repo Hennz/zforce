@@ -19,7 +19,7 @@ namespace cafe_manager
         string state;
         string pincode;
         string country;
-        public DateTime Dob;
+        DateTime dob;
         string gender;
 
 
@@ -178,6 +178,19 @@ namespace cafe_manager
             set
             {
                 gender = value;
+            }
+        }
+
+        public DateTime Dob
+        {
+            get
+            {
+                return Dob;
+            }
+
+            set
+            {
+                Dob = value;
             }
         }
 

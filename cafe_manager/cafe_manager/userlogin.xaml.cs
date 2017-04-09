@@ -43,7 +43,7 @@ namespace cafe_manager
         private void btn_signin_Click_1(object sender, RoutedEventArgs e)
         {
             string userName = text_username.Text.ToString();
-            string password = text_password.Text.ToString();
+            string password = text_password.Password.ToString();
             if (user.authenticateUser(userName, password))
                 {
                 MessageBox.Show("Login Success");

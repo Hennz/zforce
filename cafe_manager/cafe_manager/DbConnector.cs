@@ -21,11 +21,11 @@ namespace cafe_manager
         //Constructor to create CONNECTION STRING 
         public DbConnector()
         {
-            //server = "192.168.1.102";
+            server = "192.168.1.102";
             server = "localhost";
             database = "Zforce_Client";
-            Userid = "root";
-            password = "root";
+            Userid = "zforce";
+            password = "zforce";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + Userid + ";" + "PASSWORD=" + password + ";";
@@ -84,8 +84,8 @@ namespace cafe_manager
         public bool registerUser(User user)
         {
 
-            string Getusercount = "select count(UserId) from user";
-            string Getcafename = "select CafeName from cafe";
+            string Getusercount = "select count(userId) from user";
+            string Getcafename = "select cafeName from cafe";
             //Create a list to store the result
             int usercount = 0;
             string cafename = null;
@@ -120,22 +120,23 @@ namespace cafe_manager
 
 
             String userId = cafename + "u" + usercount;
+            user.UserId = userId;
 
-            String query = "INSERT INTO user(UserId,UserName,Pass,FirstName, LastName, Email1, Mobile1, AddressLine1, AddressLine2, City, State, Country, Pincode,IsUserLoggedIn,WalletId) VALUES(" + "'" + userId + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + ")";
-            String query1 = "Insert into wallet (WalletId,WalletOfflieAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
+            String query = "INSERT INTO user( userId, userName, password, name, gender, email, mobile, City, State, Country, Pincode) VALUES(" + "'" + user.UserId + "'" + "," + "'" + user.Username + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Gender + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + ")";
+            //String query1 = "Insert into wallet (WalletId,WalletOfflieAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query1, sqlConnection);
+               // MySqlCommand cmd = new MySqlCommand(query1, sqlConnection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
 
 
                 //close connection
-                this.CloseConnection();
-                this.OpenConnection();
+                //this.CloseConnection();
+                //this.OpenConnection();
                 MySqlCommand cmd1 = new MySqlCommand(query, sqlConnection);
                 cmd1.ExecuteNonQuery();
                 this.CloseConnection();
@@ -277,7 +278,7 @@ namespace cafe_manager
         public bool checkUsername(String username)
         {
             //query database if the username is unique or not
-            string query = "SELECT * from user where UserName=" + "'" + username + "'" + "";
+            string query = "SELECT * from user where userName=" + "'" + username + "'" + "";
             //Open connection
             if (this.OpenConnection() == true)
             {
@@ -316,7 +317,7 @@ namespace cafe_manager
         public bool checkMobile(string mobile)
         {
             //query if the mobile number is unique or not
-            string query = "SELECT * from user where Mobile1=" + "'" + mobile + "'" + "";
+            string query = "SELECT * from user where mobile=" + "'" + mobile + "'" + "";
             //Open connection
             if (this.OpenConnection() == true)
             {
@@ -354,7 +355,7 @@ namespace cafe_manager
         {
             //Query database for the email uniqueness check
 
-            string query = "SELECT * from user where Email1=" + "'" + email + "'" + "";
+            string query = "SELECT * from user where email=" + "'" + email + "'" + "";
             //Open connection
             if (this.OpenConnection() == true)
             {
