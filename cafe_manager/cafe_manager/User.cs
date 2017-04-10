@@ -253,7 +253,19 @@ namespace cafe_manager
             else
                 return false;
         }
-                    
+        
+        // To Verify the age is greater then 13 years
+        public bool verifyAge(DateTime birthdate)
+        {
+            DateTime currentDate = DateTime.Now;
+            TimeSpan dif = currentDate.Subtract(birthdate);
+            if(dif.TotalDays > 4745)
+            {
+                return true;
+            }
+            else 
+                return false;
+        }
    
     
     // End semicolons
