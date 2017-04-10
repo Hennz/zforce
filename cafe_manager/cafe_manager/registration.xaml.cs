@@ -117,11 +117,7 @@ namespace cafe_manager
                 return;
             }
 
-            DateTime currentDate = DateTime.Now;
-            DateTime d = Convert.ToDateTime(birthdate);
-            TimeSpan dif = currentDate.Subtract(d);
-
-            if (dif.TotalDays < 4745)
+            if (user.verifyAge(Convert.ToDateTime(birthdate)))
             {
                 lbl_er_dob_msg.Content = ("User should be above 13 years");
                 return;
