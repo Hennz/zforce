@@ -31,6 +31,8 @@ namespace cafe_manager
         private void btn_signup_Click(object sender, RoutedEventArgs e)
         {
          //open the Registration window
+         registration regForm = new registration();
+         regForm.show();
         }
         
         // To open the ForgotPassword Window window
