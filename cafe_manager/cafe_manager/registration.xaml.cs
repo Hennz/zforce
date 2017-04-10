@@ -170,14 +170,10 @@ namespace cafe_manager
             user.Country = country;
             user.Pincode = pin;
 
-
-
-
             if (user.RegisterUser(user))
             {
                 MessageBox.Show("Registration successful");
-
-
+                this.Close();     
             }
 
             else
