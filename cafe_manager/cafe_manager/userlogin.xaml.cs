@@ -32,7 +32,7 @@ namespace cafe_manager
         {
          //open the Registration window
          registration regForm = new registration();
-         regForm.show();
+         regForm.ShowDialog();
         }
         
         // To open the ForgotPassword Window window
@@ -54,5 +54,8 @@ namespace cafe_manager
                 MessageBox.Show("Failure");
         }
 
+      
+
+        //End braces
     }
 }

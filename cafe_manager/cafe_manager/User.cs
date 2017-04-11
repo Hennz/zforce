@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace cafe_manager
 {
@@ -259,7 +260,8 @@ namespace cafe_manager
         {
             DateTime currentDate = DateTime.Now;
             TimeSpan dif = currentDate.Subtract(birthdate);
-            if(dif.TotalDays > 4745)
+            MessageBox.Show(dif.ToString());
+            if(dif.TotalDays < 4745)
             {
                 return true;
             }

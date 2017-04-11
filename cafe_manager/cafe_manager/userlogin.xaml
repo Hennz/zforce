@@ -43,7 +43,7 @@
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </Button.Foreground>
             </Button>
-            <Button x:Name="btn_signup" Content="Sign Up" HorizontalAlignment="Left" Height="29" Margin="252,160,0,0" VerticalAlignment="Top" Width="105" Background="#FF107896" FontFamily="Segoe UI Semibold">
+            <Button x:Name="btn_signup" Content="Sign Up" HorizontalAlignment="Left" Height="29" Margin="252,160,0,0" VerticalAlignment="Top" Width="105" Background="#FF107896" FontFamily="Segoe UI Semibold" Click="btn_signup_Click">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </Button.Foreground>

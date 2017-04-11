@@ -25,6 +25,7 @@ namespace cafe_manager
         public registration()
         {
             InitializeComponent();
+            
         }
 
         private void btn_register_Click(object sender, RoutedEventArgs e)

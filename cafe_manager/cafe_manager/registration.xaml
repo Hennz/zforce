@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cafe_manager"
         mc:Ignorable="d"
-        Title="registration" Height="500.751" Width="811.353" Background="#FF093145">
+        Title="registration" Height="500.751" Width="811.353" Background="#FF093145" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="359*"/>
