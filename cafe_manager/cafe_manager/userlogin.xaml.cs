@@ -48,7 +48,11 @@ namespace cafe_manager
             string password = text_password.Password.ToString();
             if (user.authenticateUser(userName, password))
                 {
-                MessageBox.Show("Login Success");
+                user.Username = userName;
+                user = user.getUserDetailsByName(user);
+                Client_Home client_Home = new Client_Home(user);
+                this.Close();
+                client_Home.Show();
             }
             else
                 MessageBox.Show("Failure");

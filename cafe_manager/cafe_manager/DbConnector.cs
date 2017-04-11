@@ -16,7 +16,7 @@ namespace cafe_manager
         private static string database;
         private static string Userid;
         private static string password;
-
+        User user;
 
         //Constructor to create CONNECTION STRING 
         public DbConnector()
@@ -193,8 +193,10 @@ namespace cafe_manager
         // To get the user Details by Id
         public User getUserDetailsByName(User user)
         {
+
+            
             // code to get the user details from the user id
-            string query = "SELECT * from user where userId=" + "'" + user.Username + "'" + "";
+            string query = "SELECT * from user where userName=" + "'" + user.Username + "'" + "";
             if (this.OpenConnection() == true)
             {
                 //Create Command
@@ -209,24 +211,24 @@ namespace cafe_manager
                     user.UserId = dataReader["userId"].ToString();
                     user.Name = dataReader["name"].ToString();
                     user.Username = dataReader["userName"].ToString();
-                    user.Email = dataReader["email1"].ToString();
+                    user.Email = dataReader["email"].ToString();
                     user.Mobile = dataReader["mobile"].ToString();
-                    user.City = dataReader["City"].ToString();
-                    user.State = dataReader["State"].ToString();
-                    user.Country = dataReader["Country"].ToString();
-                    user.Pincode = dataReader["Pincode"].ToString();
-                    user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
+                    user.City = dataReader["city"].ToString();
+                    user.State = dataReader["state"].ToString();
+                    user.Country = dataReader["country"].ToString();
+                    user.Pincode = dataReader["pincode"].ToString();
+                    //user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
 
-                query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
+                /*query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
                 cmd = new MySqlCommand(query, sqlConnection);
                 dataReader = cmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     user.WalletAmount = Convert.ToDecimal(dataReader["WalletOfflieAmount"].ToString());
-                }
+                }*/
                 //close connection
                 dataReader.Close();
                 this.CloseConnection();

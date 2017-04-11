@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace cafe_manager
 {
-    class User
+    public class User
     {
         string userId;
         string name;

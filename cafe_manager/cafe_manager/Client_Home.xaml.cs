@@ -19,9 +19,17 @@ namespace cafe_manager
     /// </summary>
     public partial class Client_Home : Window
     {
+        User user;
         public Client_Home()
         {
             InitializeComponent();
+        }
+        public Client_Home(User user)
+        {
+            InitializeComponent();
+            this.user = user;
+            MessageBox.Show(user.Name);
+            client_lbl_name.Content = user.Name;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
