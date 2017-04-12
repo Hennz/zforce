@@ -228,7 +228,25 @@ namespace cafe_manager
             }
             return user;
         }
+          
+        //To get the wallet balance amount
+        public decimal getWalletamount(String userId)
+        {
+             query = "Select * from wallet where WalletId =  " + "'" + userId + "'" + "";
+                cmd = new MySqlCommand(query, sqlConnection);
+                dataReader = cmd.ExecuteReader();
 
+                while (dataReader.Read())
+                {
+                    walletAmount = Convert.ToDecimal(dataReader["walletAmount"].ToString());
+                }
+                //close connection
+                dataReader.Close();
+                this.CloseConnection();
+            }
+            return walletAmount;
+            
+        }
         // To authenticate user
         public bool authenticateUser(String username, String password)
         {
