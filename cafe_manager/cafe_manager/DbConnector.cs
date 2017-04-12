@@ -123,21 +123,16 @@ namespace cafe_manager
             user.UserId = userId;
 
             String query = "INSERT INTO user( userId, userName, password, name, gender, email, mobile, City, State, Country, Pincode) VALUES(" + "'" + user.UserId + "'" + "," + "'" + user.Username + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Gender + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + ")";
-            //String query1 = "Insert into wallet (WalletId,WalletOfflieAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
+            String query1 = "Insert into wallet (WalletId,WalletAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-               // MySqlCommand cmd = new MySqlCommand(query1, sqlConnection);
+                MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
 
                 //Execute command
-                //cmd.ExecuteNonQuery();
-
-
-                //close connection
-                //this.CloseConnection();
-                //this.OpenConnection();
-                MySqlCommand cmd1 = new MySqlCommand(query, sqlConnection);
+                cmd.ExecuteNonQuery();
+                MySqlCommand cmd1 = new MySqlCommand(query1, sqlConnection);
                 cmd1.ExecuteNonQuery();
                 this.CloseConnection();
                 return true;
@@ -167,10 +162,10 @@ namespace cafe_manager
                     user.Username = dataReader["userName"].ToString();
                     user.Email = dataReader["email1"].ToString();
                     user.Mobile = dataReader["mobile"].ToString();
-                    user.City = dataReader["City"].ToString();
-                    user.State = dataReader["State"].ToString();
-                    user.Country = dataReader["Country"].ToString();
-                    user.Pincode = dataReader["Pincode"].ToString();
+                    user.City = dataReader["city"].ToString();
+                    user.State = dataReader["state"].ToString();
+                    user.Country = dataReader["country"].ToString();
+                    user.Pincode = dataReader["pincode"].ToString();
                     user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
@@ -211,10 +206,10 @@ namespace cafe_manager
                     user.Username = dataReader["userName"].ToString();
                     user.Email = dataReader["email1"].ToString();
                     user.Mobile = dataReader["mobile"].ToString();
-                    user.City = dataReader["City"].ToString();
-                    user.State = dataReader["State"].ToString();
-                    user.Country = dataReader["Country"].ToString();
-                    user.Pincode = dataReader["Pincode"].ToString();
+                    user.City = dataReader["city"].ToString();
+                    user.State = dataReader["state"].ToString();
+                    user.Country = dataReader["country"].ToString();
+                    user.Pincode = dataReader["pincode"].ToString();
                     user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
