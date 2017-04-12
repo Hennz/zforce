@@ -216,14 +216,14 @@ namespace cafe_manager
 
                 }
 
-                /*query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
+                query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
                 cmd = new MySqlCommand(query, sqlConnection);
                 dataReader = cmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
-                    user.WalletAmount = Convert.ToDecimal(dataReader["WalletOfflieAmount"].ToString());
-                }*/
+                    user.WalletAmount = Convert.ToDecimal(dataReader["WalletAmount"].ToString());
+                }
                 //close connection
                 dataReader.Close();
                 this.CloseConnection();
@@ -234,9 +234,10 @@ namespace cafe_manager
         //To get the wallet balance amount
         public decimal getWalletamount(String userId)
         {
-             query = "Select * from wallet where WalletId =  " + "'" + userId + "'" + "";
-                cmd = new MySqlCommand(query, sqlConnection);
-                dataReader = cmd.ExecuteReader();
+            decimal walletAmount = 0;
+            string query = "Select * from wallet where WalletId =  " + "'" + userId + "'" + "";
+            MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
@@ -245,7 +246,7 @@ namespace cafe_manager
                 //close connection
                 dataReader.Close();
                 this.CloseConnection();
-            }
+            
             return walletAmount;
             
         }
