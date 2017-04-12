@@ -16,7 +16,7 @@ namespace cafe_manager
         private static string database;
         private static string Userid;
         private static string password;
-        User user;
+
 
         //Constructor to create CONNECTION STRING 
         public DbConnector()
@@ -123,21 +123,16 @@ namespace cafe_manager
             user.UserId = userId;
 
             String query = "INSERT INTO user( userId, userName, password, name, gender, email, mobile, City, State, Country, Pincode) VALUES(" + "'" + user.UserId + "'" + "," + "'" + user.Username + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Gender + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + ")";
-            //String query1 = "Insert into wallet (WalletId,WalletOfflieAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
+            String query1 = "Insert into wallet (WalletId,WalletAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-               // MySqlCommand cmd = new MySqlCommand(query1, sqlConnection);
+                MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
 
                 //Execute command
-                //cmd.ExecuteNonQuery();
-
-
-                //close connection
-                //this.CloseConnection();
-                //this.OpenConnection();
-                MySqlCommand cmd1 = new MySqlCommand(query, sqlConnection);
+                cmd.ExecuteNonQuery();
+                MySqlCommand cmd1 = new MySqlCommand(query1, sqlConnection);
                 cmd1.ExecuteNonQuery();
                 this.CloseConnection();
                 return true;
@@ -167,10 +162,10 @@ namespace cafe_manager
                     user.Username = dataReader["userName"].ToString();
                     user.Email = dataReader["email1"].ToString();
                     user.Mobile = dataReader["mobile"].ToString();
-                    user.City = dataReader["City"].ToString();
-                    user.State = dataReader["State"].ToString();
-                    user.Country = dataReader["Country"].ToString();
-                    user.Pincode = dataReader["Pincode"].ToString();
+                    user.City = dataReader["city"].ToString();
+                    user.State = dataReader["state"].ToString();
+                    user.Country = dataReader["country"].ToString();
+                    user.Pincode = dataReader["pincode"].ToString();
                     user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
@@ -193,10 +188,8 @@ namespace cafe_manager
         // To get the user Details by Id
         public User getUserDetailsByName(User user)
         {
-
-            
             // code to get the user details from the user id
-            string query = "SELECT * from user where userName=" + "'" + user.Username + "'" + "";
+            string query = "SELECT * from user where userId=" + "'" + user.Username + "'" + "";
             if (this.OpenConnection() == true)
             {
                 //Create Command
@@ -211,31 +204,49 @@ namespace cafe_manager
                     user.UserId = dataReader["userId"].ToString();
                     user.Name = dataReader["name"].ToString();
                     user.Username = dataReader["userName"].ToString();
-                    user.Email = dataReader["email"].ToString();
+                    user.Email = dataReader["email1"].ToString();
                     user.Mobile = dataReader["mobile"].ToString();
                     user.City = dataReader["city"].ToString();
                     user.State = dataReader["state"].ToString();
                     user.Country = dataReader["country"].ToString();
                     user.Pincode = dataReader["pincode"].ToString();
-                    //user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
+                    user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
 
-                /*query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
+                query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
                 cmd = new MySqlCommand(query, sqlConnection);
                 dataReader = cmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     user.WalletAmount = Convert.ToDecimal(dataReader["WalletOfflieAmount"].ToString());
-                }*/
+                }
                 //close connection
                 dataReader.Close();
                 this.CloseConnection();
             }
             return user;
         }
+          
+        //To get the wallet balance amount
+        public decimal getWalletamount(String userId)
+        {
+             query = "Select * from wallet where WalletId =  " + "'" + userId + "'" + "";
+                cmd = new MySqlCommand(query, sqlConnection);
+                dataReader = cmd.ExecuteReader();
 
+                while (dataReader.Read())
+                {
+                    walletAmount = Convert.ToDecimal(dataReader["walletAmount"].ToString());
+                }
+                //close connection
+                dataReader.Close();
+                this.CloseConnection();
+            }
+            return walletAmount;
+            
+        }
         // To authenticate user
         public bool authenticateUser(String username, String password)
         {
