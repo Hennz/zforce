@@ -39,7 +39,7 @@
             <MenuItem Header="_Transactions"/>
         </Menu>
         <Menu x:Name="client_menu_logout" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="60" Background="#FF107896" Foreground="#FF829356" Margin="131.689,10,0,0" FontFamily="Segoe UI Black" FontWeight="Bold" Grid.Column="1">
-            <Button Background="#FF107896" Content="Log Out" FontFamily="Segoe UI Semibold" FontWeight="Normal">
+            <Button Background="#FF107896" Content="Log Out" FontFamily="Segoe UI Semibold" FontWeight="Normal" Click="Logout_click">
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
                 </Button.Foreground>

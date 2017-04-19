@@ -121,9 +121,10 @@ namespace cafe_manager
 
             String userId = cafename + "u" + usercount;
             user.UserId = userId;
-
-            String query = "INSERT INTO user( userId, userName, password, name, gender, email, mobile, City, State, Country, Pincode) VALUES(" + "'" + user.UserId + "'" + "," + "'" + user.Username + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Gender + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + ")";
-            String query1 = "Insert into wallet (WalletId,WalletAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
+            String dob = user.Dob.ToString("yyyy/MM/dd");
+            MessageBox.Show(dob);
+            String query = "INSERT INTO user( userId, userName, password, name, gender, email, mobile, City, State, Country, Pincode,dob) VALUES(" + "'" + user.UserId + "'" + "," + "'" + user.Username + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Gender + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + "," + "'" +dob + "'" + ")";
+            String query1 = "Insert into wallet (walletId,walletAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
             //open connection
             if (this.OpenConnection() == true)
             {
@@ -138,6 +139,20 @@ namespace cafe_manager
                 return true;
             }
 
+            return false;
+        }
+
+        internal bool setActiveFlag(string username)
+        {
+            string query = "update user set IsUserLoggedIn =" + 1 + " where userName =" + "'" + username + "'" + "";
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+                return true;
+            }
             return false;
         }
 
@@ -166,24 +181,51 @@ namespace cafe_manager
                     user.State = dataReader["state"].ToString();
                     user.Country = dataReader["country"].ToString();
                     user.Pincode = dataReader["pincode"].ToString();
-                    user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
+                   // user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
-
+                dataReader.Close();
                 query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
-                cmd = new MySqlCommand(query, sqlConnection);
-                dataReader = cmd.ExecuteReader();
+                MySqlCommand cmd1 = new MySqlCommand(query, sqlConnection);
+                MySqlDataReader dataReader1 = cmd1.ExecuteReader();
+
+                while (dataReader1.Read())
+                {
+                    user.WalletAmount = Convert.ToDecimal(dataReader1["WalletOfflieAmount"].ToString());
+                }
+                //close connection
+                dataReader1.Close();
+                this.CloseConnection();
+            }
+            return user;
+        }
+
+        internal bool monitoruserLogin(string userId)
+        {
+            string isUserLoggedIn = null;
+            string query = "Select IsUserLoggedIn from user where WalletId =  " + "'" + userId + "'" + "";
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
 
                 while (dataReader.Read())
                 {
-                    user.WalletAmount = Convert.ToDecimal(dataReader["WalletOfflieAmount"].ToString());
+                    isUserLoggedIn = dataReader["IsUserLoggedIn"].ToString();
                 }
                 //close connection
                 dataReader.Close();
                 this.CloseConnection();
             }
-            return user;
+
+            if (isUserLoggedIn.Equals('1'))
+            {
+                return true;
+            }
+
+            return false;
         }
+
 
         // To get the user Details by Id
         public User getUserDetailsByName(User user)
@@ -212,17 +254,17 @@ namespace cafe_manager
                     user.State = dataReader["state"].ToString();
                     user.Country = dataReader["country"].ToString();
                     user.Pincode = dataReader["pincode"].ToString();
-                    user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
+                    //user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
+                dataReader.Close();
+                query = "Select * from wallet where walletId =  " + "'" + user.UserId + "'" + "";
+                MySqlCommand cmd1 = new MySqlCommand(query, sqlConnection);
+                MySqlDataReader dataReader1 = cmd1.ExecuteReader();
 
-                query = "Select * from wallet where WalletId =  " + "'" + user.UserId + "'" + "";
-                cmd = new MySqlCommand(query, sqlConnection);
-                dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
+                while (dataReader1.Read())
                 {
-                    user.WalletAmount = Convert.ToDecimal(dataReader["WalletAmount"].ToString());
+                    user.WalletAmount = Convert.ToDecimal(dataReader1["walletAmount"].ToString());
                 }
                 //close connection
                 dataReader.Close();
@@ -235,7 +277,7 @@ namespace cafe_manager
         public decimal getWalletamount(String userId)
         {
             decimal walletAmount = 0;
-            string query = "Select * from wallet where WalletId =  " + "'" + userId + "'" + "";
+            string query = "Select * from wallet where walletId =  " + "'" + userId + "'" + "";
             MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
 

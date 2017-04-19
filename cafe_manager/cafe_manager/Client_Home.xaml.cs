@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,11 +31,47 @@ namespace cafe_manager
             this.user = user;
             MessageBox.Show(user.Name);
             client_lbl_name.Content = user.Name;
+
+            //create new thread to monitor the user login status
+            ThreadStart newthread = new ThreadStart(isUserLogged);
+            Thread monitorLoginStatus = new Thread(newthread);
+            monitorLoginStatus.Start();
+
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void Logout_click(object sender, RoutedEventArgs e)
+        {
+            logout();
+
+        }
+
+        private void logout()
+        {
+            MainWindow login = new MainWindow();
+            this.Close();
+            login.Show();
+        }
+
+        public void isUserLogged()
+        {
+            while(true)
+            {
+                if (!user.monitorUserLogin(user.UserId))
+                {
+                    logout();
+                }
+                    
+            }
+
+        }
+
+
+        //End braces
     }
 }

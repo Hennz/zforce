@@ -186,12 +186,12 @@ namespace cafe_manager
         {
             get
             {
-                return Dob;
+                return dob;
             }
 
             set
             {
-                Dob = value;
+                dob = value;
             }
         }
 
@@ -222,10 +222,13 @@ namespace cafe_manager
 
         public bool authenticateUser(String username, String password)
         {
-            if (dbconnector.authenticateUser(username,password))
+            if (dbconnector.authenticateUser(username, password))
+            {
+                if(dbconnector.setActiveFlag(username))
                 return true;
-            else
-                return false;
+            }
+            
+            return false;
         }
                 
         //To check if the username is unique or not
@@ -266,6 +269,15 @@ namespace cafe_manager
                 return true;
             }
             else 
+                return false;
+        }
+
+        public bool monitorUserLogin(String userId)
+        {
+            if (dbconnector.monitoruserLogin(userId))
+            {
+                return true;
+            }
                 return false;
         }
    

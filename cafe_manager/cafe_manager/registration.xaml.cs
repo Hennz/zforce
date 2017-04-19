@@ -163,7 +163,7 @@ namespace cafe_manager
             user.Username = username;
             user.Password = password;
             user.Gender = gender;
-            //user.Dob = Convert.ToDateTime(birthdate);
+            user.Dob = Convert.ToDateTime(birthdate);
             user.Email = email;
             user.Mobile = mobile;
             user.City = city;
