@@ -180,6 +180,7 @@ namespace cafe_manager
                     user.State = dataReader["state"].ToString();
                     user.Country = dataReader["country"].ToString();
                     user.Pincode = dataReader["pincode"].ToString();
+                    user.LastLogin = dataReader["LastLoginDate"].ToString();
                    // user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
@@ -253,6 +254,7 @@ namespace cafe_manager
                     user.State = dataReader["state"].ToString();
                     user.Country = dataReader["country"].ToString();
                     user.Pincode = dataReader["pincode"].ToString();
+                    user.LastLogin = dataReader["LastLoginDate"].ToString();
                     //user.Dob = Convert.ToDateTime(dataReader["Dob"].ToString());
 
                 }
