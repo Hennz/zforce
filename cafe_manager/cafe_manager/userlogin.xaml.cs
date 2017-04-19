@@ -42,7 +42,7 @@ namespace cafe_manager
         }
 
         // To authenticate the user
-        private void btn_signin_Click_1(object sender, RoutedEventArgs e)
+        private void btn_signin_Click(object sender, RoutedEventArgs e)
         {
             string userName = text_username.Text.ToString();
             string password = text_password.Password.ToString();
@@ -51,7 +51,7 @@ namespace cafe_manager
                 user.Username = userName;
                 user = user.getUserDetailsByName(user);
                 Client_Home client_Home = new Client_Home(user);
-                this.Close();
+                this.Hide();
                 client_Home.Show();
             }
             else

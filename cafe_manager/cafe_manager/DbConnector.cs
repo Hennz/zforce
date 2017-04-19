@@ -122,7 +122,6 @@ namespace cafe_manager
             String userId = cafename + "u" + usercount;
             user.UserId = userId;
             String dob = user.Dob.ToString("yyyy/MM/dd");
-            MessageBox.Show(dob);
             String query = "INSERT INTO user( userId, userName, password, name, gender, email, mobile, City, State, Country, Pincode,dob) VALUES(" + "'" + user.UserId + "'" + "," + "'" + user.Username + "'" + "," + "'" + user.Password + "'" + "," + "'" + user.Name + "'" + "," + "'" + user.Gender + "'" + "," + "'" + user.Email + "'" + "," + "'" + user.Mobile + "'" + "," + "'" + user.City + "'" + "," + "'" + user.State + "'" + "," + "'" + user.Country + "'" + "," + "'" + user.Pincode + "'" + "," + "'" +dob + "'" + ")";
             String query1 = "Insert into wallet (walletId,walletAmount) Values (" + "'" + userId + "'" + "," + "'" + 0 + "'" + ")";
             //open connection
@@ -203,7 +202,7 @@ namespace cafe_manager
         internal bool monitoruserLogin(string userId)
         {
             string isUserLoggedIn = null;
-            string query = "Select IsUserLoggedIn from user where WalletId =  " + "'" + userId + "'" + "";
+            string query = "Select IsUserLoggedIn from user where userId =  " + "'" + userId + "'" + "";
             if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
@@ -217,8 +216,8 @@ namespace cafe_manager
                 dataReader.Close();
                 this.CloseConnection();
             }
-
-            if (isUserLoggedIn.Equals('1'))
+            MessageBox.Show(isUserLoggedIn);
+            if (isUserLoggedIn.Equals("1"))
             {
                 return true;
             }

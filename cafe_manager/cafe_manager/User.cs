@@ -263,7 +263,6 @@ namespace cafe_manager
         {
             DateTime currentDate = DateTime.Now;
             TimeSpan dif = currentDate.Subtract(birthdate);
-            MessageBox.Show(dif.ToString());
             if(dif.TotalDays < 4745)
             {
                 return true;

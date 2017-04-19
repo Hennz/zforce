@@ -21,6 +21,8 @@ namespace cafe_manager
     public partial class Client_Home : Window
     {
         User user;
+        //ThreadStart newthread = null;
+        //Thread monitorLoginStatus = null;
         public Client_Home()
         {
             InitializeComponent();
@@ -33,9 +35,10 @@ namespace cafe_manager
             client_lbl_name.Content = user.Name;
 
             //create new thread to monitor the user login status
-            ThreadStart newthread = new ThreadStart(isUserLogged);
-            Thread monitorLoginStatus = new Thread(newthread);
-            monitorLoginStatus.Start();
+            //newthread = new ThreadStart(isUserLogged);
+           // monitorLoginStatus = new Thread(newthread);
+            //monitorLoginStatus.SetApartmentState(ApartmentState.STA);
+            //monitorLoginStatus.Start();
 
             
         }
@@ -53,9 +56,13 @@ namespace cafe_manager
 
         private void logout()
         {
+            MessageBox.Show("Im in logout");
+            //monitorLoginStatus.Abort();
             MainWindow login = new MainWindow();
             this.Close();
             login.Show();
+            
+
         }
 
         public void isUserLogged()
@@ -64,8 +71,10 @@ namespace cafe_manager
             {
                 if (!user.monitorUserLogin(user.UserId))
                 {
+                    
                     logout();
                 }
+                Thread.Sleep(5000);
                     
             }
 
