@@ -22,7 +22,6 @@ namespace cafe_manager
         string country;
         DateTime dob;
         string gender;
-        string lastLogin;
 
 
         DbConnector dbconnector = new DbConnector();
@@ -193,19 +192,6 @@ namespace cafe_manager
             set
             {
                 dob = value;
-            }
-        }
-
-        public string LastLogin
-        {
-            get
-            {
-                return lastLogin;
-            }
-
-            set
-            {
-                lastLogin = value;
             }
         }
 

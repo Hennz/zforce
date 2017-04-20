@@ -33,17 +33,14 @@ namespace cafe_manager
             this.user = user;
             MessageBox.Show(user.Name);
             client_lbl_name.Content = user.Name;
-            client_lbl_amountbalance.Content = user.WalletAmount.ToString();
-            MessageBox.Show(user.LastLogin);
-            client_lbl_lastlogincafe.Content = user.LastLogin;
 
             //create new thread to monitor the user login status
             //newthread = new ThreadStart(isUserLogged);
-            // monitorLoginStatus = new Thread(newthread);
+           // monitorLoginStatus = new Thread(newthread);
             //monitorLoginStatus.SetApartmentState(ApartmentState.STA);
             //monitorLoginStatus.Start();
 
-
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -59,6 +56,7 @@ namespace cafe_manager
 
         private void logout()
         {
+            MessageBox.Show("Im in logout");
             //monitorLoginStatus.Abort();
             MainWindow login = new MainWindow();
             this.Close();
