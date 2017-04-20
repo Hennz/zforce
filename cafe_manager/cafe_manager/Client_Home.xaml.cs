@@ -57,12 +57,15 @@ namespace cafe_manager
         private void logout()
         {
             MessageBox.Show("Im in logout");
+            if (user.logout(user))
+            {
             //monitorLoginStatus.Abort();
             MainWindow login = new MainWindow();
             this.Close();
             login.Show();
-            
-
+            }
+            else 
+                Messagebox.Show("Unable to logout");
         }
 
         public void isUserLogged()
