@@ -141,9 +141,25 @@ namespace cafe_manager
             return false;
         }
 
+        //To set the flag on login
         internal bool setActiveFlag(string username)
         {
             string query = "update user set IsUserLoggedIn =" + 1 + " where userName =" + "'" + username + "'" + "";
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, sqlConnection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+                return true;
+            }
+            return false;
+        }
+        
+        // To Reset the flag on Log out
+        internal bool resetActiveFlag(string username)
+        {
+            string query = "update user set IsUserLoggedIn =" + 0 + " where userName =" + "'" + username + "'" + "";
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
