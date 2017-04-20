@@ -46,15 +46,21 @@ namespace cafe_manager
         {
             string userName = text_username.Text.ToString();
             string password = text_password.Password.ToString();
-            if (user.authenticateUser(userName, password))
+            
+            if(userName == "" || password == "")
+            {
+            //Error  msg
+            return;
+            }
+             if (user.authenticateUser(userName, password))
                 {
                 user.Username = userName;
                 user = user.getUserDetailsByName(user);
                 Client_Home client_Home = new Client_Home(user);
                 this.Hide();
                 client_Home.Show();
-            }
-            else
+                 }
+                else
                 MessageBox.Show("Failure");
         }
 
