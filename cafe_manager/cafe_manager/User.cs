@@ -271,6 +271,7 @@ namespace cafe_manager
                 return false;
         }
 
+        //  To moniter the user
         public bool monitorUserLogin(String userId)
         {
             if (dbconnector.monitoruserLogin(userId))
@@ -279,6 +280,16 @@ namespace cafe_manager
             }
                 return false;
         }
+        
+        // To do the logout activities
+        public bool logout(User user)
+        {
+            if (dbConnect.resetActiveFlag(user.UserName))
+            {
+                //usre logged out
+            }
+        }
+        
    
     
     // End semicolons
